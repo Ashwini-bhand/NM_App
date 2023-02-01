@@ -1,13 +1,228 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+body,
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: rgb(17, 17, 17);
+  color: rgb(233, 233, 233);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* scrollbar */
+
+::-webkit-scrollbar-track {
+  background: #292929;
+}
+::-webkit-scrollbar-thumb {
+  background: #8c8a87;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+.inline {
+  display: inline-flex;
+}
+.schedule {
+  padding: 0px;
+}
+.show * {
+  padding: 5px;
+}
+.show {
+  border: 4px solid #111111;
+  height: 100px;
+  box-sizing: border-box;
+  background: #212122;
+  border-radius: 12px;
+}
+.show div {
+  height: 53px;
+  padding: 4px 10px;
+}
+.show p {
+  font-size: 15.5px;
+  color: rgb(201 201 201);
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.show h5 {
+  font-size: 12px;
+  color: rgb(140 140 140);
+}
+.timeWrapper {
+  margin-top: 48px !important;
+}
+.timeWrapper,
+.dateWrapper {
+  display: inline-flex;
+  margin: 10px 0px;
+}
+.indicator {
+  width: 2px;
+  position: absolute;
+  left: 0;
+  top: 46px;
+  bottom: 0;
+  pointer-events: none;
+  background: rgba(220, 165, 60, 0.5);
+  transition: left 0.5s;
+}
+.indicator:before {
+  content: "";
+  width: 4px;
+  height: 25px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  border-radius: 2px;
+  background: rgba(220, 165, 60, 0.7);
+}
+.schedulewrapper {
+  height: 100%;
+  position: relative;
+  width: calc(100% - 160px);
+  overflow-x: scroll;
+}
+.nowButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 9px 24px;
+  background: linear-gradient(358deg, #a0720f 0%, #e1a21e 100%);
+  border: none;
+  border-radius: 8px;
+  z-index: 100;
+  font-size: 18px;
+  cursor: pointer;
+  color: #fff;
+}
+.channelnameWrapper {
+  min-width: 150px;
+}
+.pagewrapper {
+  flex-wrap: nowrap;
+  display: flex;
+  padding-top: 68px;
+}
+.channelnameWrapper .logoWrapper:first-child {
+  padding-top: 74px;
+}
+.logoWrapper {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logoWrapper .logo {
+  width: 70px;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.logoWrapper .logo img {
+  max-width: 70px;
+  max-height: 45px;
+}
+/* Date */
+.datecontariner {
+  position: fixed;
+  height: 39px;
+  margin-left: -118px;
+  background-color: rgb(17, 17, 17);
+}
+/* navigation */
+
+.navbarWrapper {
+  background: rgb(0, 0, 0);
+  height: 68px;
+  padding: 0px 17px;
+  width: -webkit-fill-available;
+  position: fixed;
+  z-index: 100;
+}
+.navbarWrapper .inline {
+  align-items: center;
+  height: inherit;
+}
+.navbarWrapper img {
+  height: 50px;
+}
+.navbarWrapper li {
+  list-style: none;
+  padding: 10px;
+  font-size: 13px;
+}
+.navbarWrapper div img {
+  margin-right: 20px;
+}
+.profileWrapper {
+  float: right;
+}
+.profileWrapper img:not(li:last-child img) {
+  height: 20px;
+}
+.profileWrapper li:last-child img {
+  width: 50px;
+  border-radius: 50%;
+}
+@media screen and (max-width: 1366px) {
+}
+@media screen and (max-width: 768px) {
+  .nowButton {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .profileWrapper li:not(li:last-child) {
+    display: none;
+  }
+  .navbarWrapper li {
+    padding: 5px;
+  }
+  .profileWrapper li:last-child img {
+    width: 40px;
+  }
+  .navbarWrapper img {
+    height: 40px;
+  }
+  .navbarWrapper {
+    height: 55px;
+  }
+}
+@media screen and (max-width: 481px) {
+  .channelnameWrapper {
+    min-width: 70px;
+  }
+  .schedulewrapper {
+    width: calc(100% - 70px);
+  }
+  .logoWrapper .logo img {
+    max-width: 45px;
+  }
+  .show p {
+    font-size: 13.5px;
+  }
+  .show h5 {
+    font-size: 9px;
+  }
+  .show,
+  .logoWrapper {
+    height: 90px;
+  }
+  .show div {
+    padding: 0px 2px;
+  }
 }
